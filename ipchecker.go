@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"net/http"
 	"strings"
+	"time"
 )
 
 var (
@@ -15,6 +16,7 @@ var (
 )
 
 func init() {
+	rand.Seed(time.Now().UnixNano())
 	RegistChecker(inetIP)
 	RegistChecker(httpbin)
 	RegistChecker(cman)
